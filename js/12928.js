@@ -2,15 +2,15 @@
 function solution(n) {
   let answer = 0;
   let num = Math.floor(Math.sqrt(n));
-  while (num > 0) {
-    if (n % num == 0) {
-      if (num == n) {
-        answer += num;
+  for (let i = 1; i <= num; i++) {
+    if (n % i == 0) {
+      if (i * i == n) {
+        answer += i;
         return answer;
-      } else answer += num + n / num;
+      }
+      answer += i + n / i;
     }
-    num--;
-    return answer;
   }
+  return answer;
 }
-console.log(solution(1));
+console.log(solution(12));
