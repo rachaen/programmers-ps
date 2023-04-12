@@ -3,9 +3,9 @@ function solution(A, B) {
   A.sort((a, b) => b - a);
   B.sort((a, b) => a - b);
 
-  answer = A.reduce((acc, cur, idx) => {
-    return acc + A[idx] * B[idx];
-  }, 0);
+  A.forEach((a, i) => {
+    answer += a * B[i];
+  });
   return answer;
 }
 console.log(solution([1, 2], [3, 4]));
